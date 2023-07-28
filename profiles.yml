@@ -1,0 +1,13 @@
+jaffle_shop: # this needs to match the profile in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /Users/seongweichin/Downloads/myfirstsandbox-334807-e2c16707ad53.json # replace this with the full path to your keyfile
+      project: myfirstsandbox-334807 # Replace this with your project id
+      dataset: dbt_swc # Replace this with dbt_your_name, e.g. dbt_bilbo
+      threads: 1
+      timeout_seconds: 300
+      location: EU
+      priority: interactive
